@@ -10,19 +10,19 @@ pipeline {
 
         stage('Deploy Extract Notebook') {
             steps {
-                sh 'databricks workspace import extract.ipynb /Repos/lakehouse/extract.ipynb -o'
+                bat 'databricks workspace import extract.ipynb /Repos/lakehouse/extract.ipynb -o'
             }
         }
 
         stage('Deploy Silver Notebook') {
             steps {
-                sh 'databricks workspace import silver.ipynb /Repos/lakehouse/silver.ipynb -o'
+                bat 'databricks workspace import silver.ipynb /Repos/lakehouse/silver.ipynb -o'
             }
         }
 
         stage('Deploy Gold Notebook') {
             steps {
-                sh 'databricks workspace import gold.ipynb /Repos/lakehouse/gold.ipynb -o'
+                bat 'databricks workspace import gold.ipynb /Repos/lakehouse/gold.ipynb -o'
             }
         }
     }
